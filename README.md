@@ -18,6 +18,6 @@ This repository contains multiple branches related to AI, test automation, and G
 - **Purpose:** Python automation testing using Pytest with AI assistance (Copilot integration).
 - **Contents:** Test scripts, sample test cases, and AI-generated code suggestions.
 
-### 4. `mcp-project`
+### 3. `mcp-project`
 - **Purpose:** Focused on sessions and demos for AI in test automation.
 - **Contents:** Training materials, session notes, and code for AI-driven test automation.

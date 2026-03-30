@@ -1,0 +1,22 @@
+{
+  "servers": {
+    "playwright-test": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "playwright",
+        "run-test-mcp-server"
+      ]
+    },
+     "selenium": {
+      "command": "npx",
+      "args": ["-y", "@angiejones/mcp-selenium@latest"]
+    },
+    "robotmcp": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "-m", "robotmcp.server"]
+    }
+  },
+  "inputs": []
+}

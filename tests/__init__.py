@@ -1,0 +1,1 @@
+"""Test package for Selenium pytest automation framework."""

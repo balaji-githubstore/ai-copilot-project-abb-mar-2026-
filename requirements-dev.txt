@@ -1,0 +1,22 @@
+# Development-only dependencies
+# Install with: pip install -r requirements-dev.txt
+
+-r requirements.txt           # Include all production requirements
+
+# Development tools
+jupyter==1.0.0               # For interactive test development
+ipython==8.21.0              # Enhanced Python shell
+
+# Advanced testing tools
+pytest-mock==3.12.0          # Mocking utilities
+pytest-timeout==2.2.0        # Test timeout management
+pytest-benchmark==4.0.0      # Performance benchmarking
+
+# Code quality and analysis
+mypy==1.8.0                  # Static type checking
+bandit==1.7.6                # Security linting
+pre-commit==3.6.0            # Git hooks for code quality
+
+# Documentation
+sphinx==7.2.6               # Documentation generation
+sphinx-rtd-theme==2.0.0     # Read the Docs theme

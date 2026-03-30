@@ -1,0 +1,156 @@
+environments:
+  dev:
+    base_url: "https://www.facebook.com"
+    browser: "chrome"
+    headless: false
+    implicit_wait: 10
+    explicit_wait: 15
+    page_load_timeout: 30
+    window_size: "1920,1080"
+    
+    # Database configuration
+    database:
+      host: "localhost"
+      port: 5432
+      username: "dev_user"
+      password: "${DB_PASSWORD}"
+      database: "test_db"
+    
+    # API configuration
+    api:
+      timeout: 30
+      retries: 3
+      base_url: "https://api-dev.example.com"
+      
+  staging:
+    base_url: "https://www.facebook.com"
+    browser: "chrome"
+    headless: true
+    implicit_wait: 10
+    explicit_wait: 15
+    page_load_timeout: 30
+    window_size: "1920,1080"
+    
+    # Database configuration
+    database:
+      host: "staging-db.example.com"
+      port: 5432
+      username: "staging_user"
+      password: "${DB_PASSWORD}"
+      database: "staging_db"
+    
+    # API configuration
+    api:
+      timeout: 45
+      retries: 5
+      base_url: "https://api-staging.example.com"
+      
+  prod:
+    base_url: "https://www.facebook.com"
+    browser: "chrome"
+    headless: true
+    implicit_wait: 15
+    explicit_wait: 20
+    page_load_timeout: 40
+    window_size: "1920,1080"
+    
+    # Database configuration
+    database:
+      host: "prod-db.example.com"
+      port: 5432
+      username: "${DB_USER}"
+      password: "${DB_PASSWORD}"
+      database: "production_db"
+    
+    # API configuration
+    api:
+      timeout: 60
+      retries: 3
+      base_url: "https://api.example.com"
+
+# Global logging configuration
+logging:
+  level: "INFO"
+  file_level: "DEBUG"
+  console_level: "INFO"
+  max_bytes: 10485760              # 10 MB
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  log_to_file: true
+  log_to_console: true
+
+# Test reporting configuration
+reporting:
+  html_report: true
+  screenshot_on_failure: true
+  video_recording: false
+  report_dir: "reports"
+  screenshot_dir: "reports/screenshots"
+  log_dir: "logs"
+  
+  # Report customization
+  report_title: "Selenium Test Execution Report"
+  show_captured: "all"           # all, no, failed
+  max_asset_filename_length: 255
+
+# WebDriver configuration
+webdriver:
+  download_directory: "downloads"
+  chrome_options:
+    - "--start-maximized"
+    - "--disable-blink-features=AutomationControlled"
+    - "--disable-dev-shm-usage"
+    - "--no-sandbox"
+    - "--disable-extensions"
+    - "--disable-plugins"
+    
+  firefox_options:
+    - "--disable-extensions"
+    - "--width=1920"
+    - "--height=1080"
+    
+  # Performance settings
+  performance:
+    page_load_strategy: "normal"    # normal, eager, none
+    script_timeout: 30
+    command_timeout: 60
+
+# Test data configuration
+test_data:
+  users:
+    valid_user:
+      email: "test@example.com"
+      password: "${TEST_PASSWORD}"
+      username: "testuser"
+    admin_user:
+      email: "admin@example.com"
+      password: "${ADMIN_PASSWORD}"
+      username: "admin"
+  
+  # Test environment URLs
+  test_urls:
+    login_page: "/login"
+    dashboard: "/dashboard"
+    profile: "/profile"
+    checkout: "/checkout"
+
+# Parallel execution settings  
+parallel:
+  enabled: false
+  workers: 4
+  strategy: "loadfile"             # loadfile, loadscope, loadgroup
+
+# Retry configuration
+retry:
+  failed_tests: 2
+  delay_between_retries: 1         # seconds
+
+# Security settings
+security:
+  mask_sensitive_data: true
+  sensitive_keys:
+    - "password"  
+    - "token"
+    - "api_key"
+    - "secret"

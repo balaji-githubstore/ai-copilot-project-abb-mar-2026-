@@ -1,8 +1,9 @@
-# pip install ollama
+# pip install ollama assertpy
 import ollama
 import json
 import pandas as pd
 import re
+from assertpy import assert_that
 
 response = ollama.chat(model="gemma3:1b", 
                        messages=[
@@ -36,11 +37,11 @@ print(set(df.columns))
 
 # testcase fails if columns are not present
 expected_columns={'age', 'city', 'name'}
-assert set(df.columns)==expected_columns, "Output does not match with expected_columns"
+assert_that(set(df.columns)).described_as("Output does not match with expected_columns").is_equal_to(expected_columns)
 
 # print(df.isnull().sum().sum())
 
-assert df.isnull().sum().sum()==0, "Output has missing value is there"
+assert_that(df.isnull().sum().sum()).described_as("Output contains missing values").is_equal_to(0)
 
 
 """

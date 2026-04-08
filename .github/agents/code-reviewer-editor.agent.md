@@ -1,4 +1,4 @@
----
+<!-- ---
 name: code-reviewer-editor
 description: "Advanced code reviewer that identifies errors, fixes assertion patterns, and directly edits Python files to resolve issues. Specializes in converting assert statements to assertpy, fixing syntax errors, and implementing test automation best practices."
 argument-hint: "Python file path to review and fix, or specific error type (e.g., 'fix assertions in test_login.py' or 'review and fix errors in pages/login_page.py')"
@@ -140,4 +140,4 @@ def test_login():
 **Remaining Issues**: {count} items requiring manual attention
 **Next Steps**: {specific actions needed}
 
-ALWAYS make the actual file edits and provide concrete before/after examples for all changes.
+ALWAYS make the actual file edits and provide concrete before/after examples for all changes. -->

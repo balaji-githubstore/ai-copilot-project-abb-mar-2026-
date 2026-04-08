@@ -1,0 +1,39 @@
+{
+	"hooks": {
+		"SessionStart": [
+			{
+				"type": "command",
+				"windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./.github/hooks/scripts/session-start.ps1",
+				"timeout": 5
+			}
+		],
+		"UserPromptSubmit": [
+			{
+				"type": "command",
+				"windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./.github/hooks/scripts/log-prompt.ps1",
+				"timeout": 10
+			}
+		],
+		"PreToolUse": [
+			{
+				"type": "command",
+				"windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./.github/hooks/scripts/check-tool.ps1",
+				"timeout": 10
+			}
+		],
+		"PostToolUse": [
+			{
+				"type": "command",
+				"windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./.github/hooks/scripts/post-tool-check.ps1",
+				"timeout": 15
+			}
+		],
+		"Stop": [
+			{
+				"type": "command",
+				"windows": "powershell -NoProfile -ExecutionPolicy Bypass -File ./.github/hooks/scripts/session-end.ps1",
+				"timeout": 5
+			}
+		]
+	}
+}

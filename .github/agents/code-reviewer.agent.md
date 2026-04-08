@@ -1,6 +1,6 @@
 ---
 description: "Use when analyzing individual Python files for code quality, test best practices, automation patterns, or pytest structure. Specializes in test automation codebase review including page object models, locators, and test organization."
-tools: [read, search, grep_search]
+tools: [read, search]
 user-invocable: true
 argument-hint: "File path to review or specific review focus (e.g., 'review test_login.py for assertion patterns')"
 ---
